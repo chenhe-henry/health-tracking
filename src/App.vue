@@ -1,10 +1,17 @@
 <template>
   <div id="app">
-    <router-link class="nav" :to="{ name: 'home' }">HomePage</router-link>|
+    <router-link class="nav" :to="{ name: 'home' }"
+      >COVID-19 Tracker</router-link
+    >| <router-link class="nav" :to="{ name: 'home' }">HomePage</router-link>|
     <router-link class="nav" :to="{ name: 'allcountries' }"
       >All Countries</router-link
-    >|
+    >
+    |
+    <router-link class="nav" :to="{ name: 'affirmation' }"
+      >Daily Affirmation</router-link
+    >
     <hr />
+
     <router-view></router-view>
   </div>
 </template>
@@ -23,10 +30,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
+  background-color: rgba(black, 0.1);
 }
 .nav {
-  margin: 20px;
+  margin: 0 20px;
   text-decoration: none;
   color: grey;
   font-weight: bold;
