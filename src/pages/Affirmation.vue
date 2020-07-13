@@ -1,6 +1,6 @@
 <template>
   <div class="affirmation">
-    <h1>
+    <h1 v-show="showAffirmation === false">
       Under this tough time, we all need
       <span class="clickable" @click="showaffirmation" role="affirmation"
         >affirmation</span
