@@ -13,4 +13,7 @@ export default {
   getGeneralInfo() {
     return apiClient.get("general-stats");
   },
+  getSpecificListing() {
+    return apiClient.get("countries-search");
+  },
 };
