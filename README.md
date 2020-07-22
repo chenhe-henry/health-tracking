@@ -23,3 +23,4 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 # covid-tracker
+Live https://chenhe-henry.github.io/covid-tracker/
