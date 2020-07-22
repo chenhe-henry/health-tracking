@@ -5,7 +5,7 @@
     <router-link class="nav" :to="{ name: 'countries' }">All Countries</router-link>|
     <router-link class="nav" :to="{ name: 'affirmation' }">Daily Affirmation</router-link>
     <hr />
-
+<h1>Hello Deploy</h1>
     <font-awesome-icon :icon="['fas', 'spinner']" spin size="6x" class="linkedin" />
     <font-awesome-icon icon="circle-notch" spin size="6x" />
     <font-awesome-icon :icon="['fab', 'linkedin-in']" class="linkedin" />
