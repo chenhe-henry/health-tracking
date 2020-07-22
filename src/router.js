@@ -7,26 +7,26 @@ import Country from "@/pages/Country.vue";
 Vue.use(Router);
 
 export default new Router({
-  mode: "history",
+  // mode: "history",
   routes: [
     {
-      path: "/covid-tracker",
+      path: "/",
       name: "home",
       component: HomePage,
     },
     {
-      path: "/covid-tracker/countries",
+      path: "/countries",
       name: "countries",
       component: Countries,
     },
     {
-      path: "/covid-tracker/countries/:countryName",
+      path: "/countries/:countryName",
       name: "country",
       component: Country,
       props: true,
     },
     {
-      path: "/covid-tracker/affirmation",
+      path: "/affirmation",
       name: "affirmation",
       component: Affirmation,
     },
