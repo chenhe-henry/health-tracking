@@ -8,7 +8,10 @@
             class="router-link"
             :to="{
               name: 'country',
-              params: { countryName: `${allCase.country}` },
+              params: {
+                countryName: `${allCase.country}`,
+                flag: `${allCase.flag}`,
+              },
             }"
           >
             <img :src="allCase.flag" :alt="allCase.country" class="imgs" />
