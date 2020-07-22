@@ -10,23 +10,23 @@ export default new Router({
   mode: "history",
   routes: [
     {
-      path: "/",
+      path: "/covid-tracker",
       name: "home",
       component: HomePage,
     },
     {
-      path: "/countries",
+      path: "/covid-tracker/countries",
       name: "countries",
       component: Countries,
     },
     {
-      path: "/countries/:countryName",
+      path: "/covid-tracker/countries/:countryName",
       name: "country",
       component: Country,
       props: true,
     },
     {
-      path: "/affirmation",
+      path: "/covid-tracker/affirmation",
       name: "affirmation",
       component: Affirmation,
     },
