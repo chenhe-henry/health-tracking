@@ -2,15 +2,15 @@
   <div class="affirmation">
     <h1 v-show="showAffirmation === false">
       At this tough time, we all need
-      <span class="clickable" @click="showaffirmation" role="affirmation"
-        >affirmation</span
-      >!
+      <span
+        class="clickable"
+        @click="showaffirmation"
+        role="affirmation"
+      >affirmation</span>!
     </h1>
 
     <div v-show="showAffirmation" role="show">
-      <h1 class="affirmation__text" v-show="affirmation">
-        Today's affirmation -- {{ affirmation }}.
-      </h1>
+      <h1 class="affirmation__text" v-show="affirmation">Today's affirmation -- {{ affirmation }}.</h1>
       <img class="affirmation__img" src="../assets/power.jpeg" alt="pic" />
     </div>
   </div>

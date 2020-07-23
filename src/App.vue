@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <h1>COVID-19 Tracker</h1>
+    <h1>Quizzes</h1>
     <router-link class="nav" :to="{ name: 'home' }">HomePage</router-link>|
-    <router-link class="nav" :to="{ name: 'countries' }">All Countries</router-link>|
+    <router-link class="nav" :to="{ name: 'quizzes' }">Quizzes</router-link>|
     <router-link class="nav" :to="{ name: 'affirmation' }">Daily Affirmation</router-link>
     <hr />
-<h1>Hello Deploy</h1>
+    <!-- <h1>Hello Deploy</h1>
     <font-awesome-icon :icon="['fas', 'spinner']" spin size="6x" class="linkedin" />
     <font-awesome-icon icon="circle-notch" spin size="6x" />
     <font-awesome-icon :icon="['fab', 'linkedin-in']" class="linkedin" />
-    <font-awesome-icon :icon="['fab', 'font-awesome']" />
+    <font-awesome-icon :icon="['fab', 'font-awesome']" />-->
     <router-view></router-view>
   </div>
 </template>
@@ -17,7 +17,7 @@
 <script>
 export default {
   name: "App",
-  components: {}
+  components: {},
 };
 </script>
 
@@ -40,7 +40,7 @@ export default {
   &:hover {
     color: black;
   }
-  &::after{
+  &::after {
     content: counter(4);
   }
 }

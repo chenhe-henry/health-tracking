@@ -1,34 +1,36 @@
 import Vue from "vue";
 import Router from "vue-router";
 import HomePage from "@/pages/HomePage.vue";
-import Countries from "@/pages/Countries.vue";
+
 import Affirmation from "@/pages/Affirmation.vue";
-import Country from "@/pages/Country.vue";
+import Quiz from "@/pages/Quiz.vue";
+import Quizzes from "@/pages/Quizzes.vue";
 Vue.use(Router);
 
 export default new Router({
-  // mode: "history",
+  mode: "history",
   routes: [
     {
       path: "/",
       name: "home",
       component: HomePage,
     },
+
     {
-      path: "/countries",
-      name: "countries",
-      component: Countries,
-    },
-    {
-      path: "/countries/:countryName",
-      name: "country",
-      component: Country,
+      path: "/quizzes/:quizId",
+      name: "Quiz",
+      component: Quiz,
       props: true,
     },
     {
       path: "/affirmation",
       name: "affirmation",
       component: Affirmation,
+    },
+    {
+      path: "/quizzes",
+      name: "quizzes",
+      component: Quizzes,
     },
   ],
 });
