@@ -14,10 +14,10 @@
     <div>
       <img src="healthlife.jpeg" alt="healthlife" />
       <div>
-        <BaesBlock v-for="block in blockInfo" :key="block.title">
+        <BaseBlock v-for="block in blockInfo" :key="block.title">
           <h2 slot="title">{{ block.title }}</h2>
           <p slot="description">{{ block.description }}</p>
-        </BaesBlock>
+        </BaseBlock>
       </div>
     </div>
   </div>

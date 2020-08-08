@@ -2,7 +2,7 @@
   <div>
     <h1>What’s BMI?</h1>
     <h3>BMI compares your weight to your height, and is calculated by dividing your weight (in kilograms) by your height (in metres squared). It gives you an idea of whether you’re "underweight", a "healthy" weight, "overweight", or "obese" for your height. BMI is one type of tool to help health professionals assess the risk for chronic disease.</h3>
-    <img src="/bmi.jpeg" alt="Body Mass Index" />
+    <img src="https://chenhe-henry.github.io/health-tracking/bmi.jpeg" alt="Body Mass Index" />
     <form @submit.prevent="calculate">
       <p>
         <label for="weight">Weight:</label>
