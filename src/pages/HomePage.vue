@@ -24,17 +24,19 @@ export default {
     return {
       cardInfo: [
         {
-          imgURL: "https://github.com/chenhe-henry/health-tracking/bmi.jpeg",
+          imgURL: "https://chenhe-henry.github.io/health-tracking/bmi.jpeg",
           title: "BMI calculator",
           description: "Calculate your BMI, get know your health condition.",
         },
         {
-          imgURL: "../assets/body_measurement.jpeg",
+          imgURL:
+            "https://chenhe-henry.github.io/health-tracking/body_measurement.jpeg",
           title: "Body Measurement",
           description: "Record and track your weight every single day.",
         },
         {
-          imgURL: "../assets/warriors_gallery.jpeg",
+          imgURL:
+            "https://chenhe-henry.github.io/health-tracking/warriors_gallery.jpeg",
           title: "Warriors Gallary",
           description: "Share with us your colorful life!",
         },
