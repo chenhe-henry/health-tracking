@@ -24,7 +24,7 @@ export default {
     return {
       cardInfo: [
         {
-          imgURL: "../assets/bmi.jpeg",
+          imgURL: "https://github.com/chenhe-henry/health-tracking/bmi.jpeg",
           title: "BMI calculator",
           description: "Calculate your BMI, get know your health condition.",
         },
