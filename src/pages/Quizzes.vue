@@ -12,18 +12,12 @@
         <strong>Difficulty:</strong>
         {{quiz.difficulty}}
       </div>
-      <!-- <div>
+      <div>
         <strong>Question:</strong>
         {{quiz.question}}
       </div>
-      <div>
-        <strong>Correct:</strong>
-        {{quiz.correct_answer}}
-      </div>
-      <div>
-        <strong>Incorrect:</strong>
-        {{quiz.incorrect_answers}}
-      </div>-->
+      <div class="options">{{quiz.correct_answer}}</div>
+      <div class="options">{{quiz.incorrect_answers}}</div>
     </div>
   </div>
 </template>
@@ -71,5 +65,10 @@ export default {
       transform: translateY(0px);
     }
   }
+}
+.options {
+  border: 1px solid black;
+  margin: 5px auto;
+  width: 80%;
 }
 </style>

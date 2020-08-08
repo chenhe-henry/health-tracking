@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <h1>Quizzes</h1>
+    <!-- <h1>Health Tracking</h1> -->
     <router-link class="nav" :to="{ name: 'home' }">HomePage</router-link>|
+    <router-link class="nav" :to="{ name: 'bodymeasurement' }">Body Measurement</router-link>|
+    <router-link class="nav" :to="{ name: 'bmicalculator' }">BMI Calculator</router-link>|
+    <router-link class="nav" :to="{ name: 'gallery' }">Gallery</router-link>|
     <router-link class="nav" :to="{ name: 'quizzes' }">Quizzes</router-link>|
     <router-link class="nav" :to="{ name: 'affirmation' }">Daily Affirmation</router-link>
     <hr />
