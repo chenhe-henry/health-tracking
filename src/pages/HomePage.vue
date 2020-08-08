@@ -5,16 +5,10 @@
       <span class="coloredTitle">Health</span> Tracking!
     </h1>
     <div class="homepage__card">
-      <BaseCard
-        v-for="card in cardInfo"
-        :key="card.title"
-        class="homepage__card-block"
-      >
+      <BaseCard v-for="card in cardInfo" :key="card.title" class="homepage__card-block">
         <img :src="card.imgURL" slot="img" :alt="card.title" height="200px" />
         <h2 slot="title">{{ card.title }}</h2>
-        <p slot="description">
-          {{ card.description }}
-        </p>
+        <p slot="description">{{ card.description }}</p>
       </BaseCard>
     </div>
     <div>

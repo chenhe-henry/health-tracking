@@ -2,16 +2,11 @@
   <div id="app">
     <!-- <h1>Health Tracking</h1> -->
     <router-link class="nav" :to="{ name: 'home' }">HomePage</router-link>|
-    <router-link class="nav" :to="{ name: 'bodymeasurement' }"
-      >Body Measurement</router-link
-    >|
-    <router-link class="nav" :to="{ name: 'bmicalculator' }"
-      >BMI Calculator</router-link
-    >| <router-link class="nav" :to="{ name: 'gallery' }">Gallery</router-link>|
+    <router-link class="nav" :to="{ name: 'bodymeasurement' }">Body Measurement</router-link>|
+    <router-link class="nav" :to="{ name: 'bmicalculator' }">BMI Calculator</router-link>|
+    <router-link class="nav" :to="{ name: 'gallery' }">Gallery</router-link>|
     <router-link class="nav" :to="{ name: 'quizzes' }">Quizzes</router-link>|
-    <router-link class="nav" :to="{ name: 'affirmation' }"
-      >Daily Affirmation</router-link
-    >
+    <router-link class="nav" :to="{ name: 'affirmation' }">Daily Affirmation</router-link>
     <!-- <hr /> -->
     <!-- <h1>Hello Deploy</h1>
     <font-awesome-icon :icon="['fas', 'spinner']" spin size="6x" class="linkedin" />
@@ -36,7 +31,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-
+  box-sizing: border-box;
+  margin: 1%;
+  padding: 0;
   // background-color: rgba(black, 0.1);
 }
 .nav {
