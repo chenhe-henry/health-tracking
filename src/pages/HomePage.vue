@@ -48,9 +48,8 @@ export default {
           description: "Calculate your BMI, get know your health condition.",
         },
         {
-          imgURL:
-            "https://chenhe-henry.github.io/health-tracking/warriors_gallery.jpeg",
-          title: "Warriors Gallary",
+          imgURL: "https://chenhe-henry.github.io/health-tracking/gallery.jpeg",
+          title: "Gallary",
           description: "Share with us your colorful life!",
         },
       ],
