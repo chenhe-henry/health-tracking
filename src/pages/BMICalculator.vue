@@ -37,8 +37,19 @@ export default {
       BMIresult: "",
     };
   },
+  mounted() {
+    if (localStorage.weight) {
+      this.weight = localStorage.weight;
+    }
+    if (localStorage.height) {
+      this.height = localStorage.height;
+    }
+  },
+
   methods: {
     calculate() {
+      localStorage.weight = this.weight;
+      localStorage.height = this.height;
       this.BMIresult = this.weight / (this.height ^ 2);
     },
   },
