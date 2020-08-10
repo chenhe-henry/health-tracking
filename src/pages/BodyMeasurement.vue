@@ -19,12 +19,13 @@
       </p>
     </form>
 
-    <table>
+    <table class="bodyMeasurement__table">
       <thead>
         <tr>
           <th>Weight</th>
           <th>Height</th>
           <th>Date</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -32,7 +33,7 @@
           <td>{{ bodyData.weight }}kg</td>
           <td>{{ bodyData.height }}m</td>
           <td>{{ bodyData.date }}</td>
-          <button @click="removeBodyInfo(n)">Remove</button>
+          <button @click="removeBodyInfo(n)" class="table-button">Remove</button>
         </tr>
       </tbody>
     </table>
@@ -87,4 +88,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.bodyMeasurement__table,
+th,
+td {
+  margin: 0 auto;
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 20px;
+  width: 500px;
+}
+.table-button {
+  margin-top: 20px;
+  background-color: rgb(27, 219, 17);
+  color: white;
+  font-weight: bold;
+}
 </style>
