@@ -6,7 +6,7 @@
     </h1>
     <div class="homepage__card">
       <BaseCard v-for="card in cardInfo" :key="card.title" class="homepage__card-block">
-        <img :src="card.imgURL" slot="img" :alt="card.title" height="200px" />
+        <img :src="getLogosUrl(card.name)" slot="img" :alt="card.title" height="200px" />
         <h2 slot="title">{{ card.title }}</h2>
         <p slot="description">{{ card.description }}</p>
       </BaseCard>
@@ -31,18 +31,17 @@ export default {
     return {
       cardInfo: [
         {
-          imgURL:
-            "https://chenhe-henry.github.io/health-tracking/body_measurement.jpeg",
+          name: "bodyMeasurement.jpeg",
           title: "Body Measurement",
           description: "Record and track your weight every single day.",
         },
         {
-          imgURL: "https://chenhe-henry.github.io/health-tracking/bmi.jpeg",
+          name: "bmi.jpeg",
           title: "BMI calculator",
           description: "Calculate your BMI, get know your health condition.",
         },
         {
-          imgURL: "https://chenhe-henry.github.io/health-tracking/gallery.jpeg",
+          name: "gallery.jpeg",
           title: "Gallary",
           description: "Share with us your colorful life!",
         },
@@ -60,6 +59,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    getLogosUrl(pic) {
+      return require(`../assets/homepageLogos/${pic}`);
+    },
   },
 };
 </script>

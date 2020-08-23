@@ -17,12 +17,23 @@
       </p>
       <div v-show="BMIresult != ''">
         <p>Your BMI Result is {{BMIresult}}</p>
-        <p v-if="BMIresult < 18.5">You are considered underweight and possibly malnourished.</p>
         <p
-          v-else-if="BMIresult >= 18.5 && BMIresult < 24.9 "
+          v-if="BMIresult < 18.5 "
+          class="BMI__result-purple"
+        >You are considered underweight and possibly malnourished.</p>
+        <p
+          v-else-if="BMIresult >= 18.5 && BMIresult < 25 "
+          class="BMI__result-blue"
         >You are within a healthy weight range for young and middle-aged adults.</p>
-        <p v-else-if="BMIresult >= 25 && BMIresult < 29.9 ">You are considered overweight.</p>
-        <p v-else>You are considered obese.</p>
+        <p
+          v-else-if="BMIresult >= 25 && BMIresult < 30 "
+          class="BMI__result-green"
+        >You are considered overweight.</p>
+        <p
+          v-else-if="BMIresult >= 30 && BMIresult < 40"
+          class="BMI__result-orange"
+        >You are considered obese.</p>
+        <p v-else class="BMI__result-red">You are considered morbidly obese.</p>
       </div>
     </form>
   </div>
@@ -57,4 +68,28 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.BMI {
+  &__result {
+    &-purple {
+      font-weight: bold;
+      color: rgb(218, 20, 218);
+    }
+    &-blue {
+      font-weight: bold;
+      color: blue;
+    }
+    &-green {
+      font-weight: bold;
+      color: green;
+    }
+    &-orange {
+      font-weight: bold;
+      color: orange;
+    }
+    &-red {
+      font-weight: bold;
+      color: red;
+    }
+  }
+}
 </style>
