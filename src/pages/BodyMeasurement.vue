@@ -4,7 +4,13 @@
     <form @submit.prevent="addBodyInfo">
       <p>
         <label for="weight">Weight:</label>
-        <input type="number" id="weight" v-model="weight" placeholder="Weight in kg" /> kg
+        <input
+          type="number"
+          id="weight"
+          v-model="weight"
+          placeholder="Weight in kg"
+        />
+        kg
       </p>
       <p>
         <label for="height">Height:</label>
@@ -12,42 +18,58 @@
       </p>
       <p>
         <label for="date">Date:</label>
-        <input type="date" id="date" v-model="date" /> m
+        <date-picker v-model="date" valueType="format"></date-picker>
       </p>
+
       <p>
-        <input type="submit" value="Record your body info" />
+        <input
+          type="submit"
+          value="Record your body info"
+          class="table-button"
+        />
       </p>
     </form>
 
-    <table class="bodyMeasurement__table">
-      <thead>
-        <tr>
-          <th>Weight</th>
-          <th>Height</th>
-          <th>Date</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="(bodyData, n) in bodyDataBase" :key="bodyData.index">
-          <td>{{ bodyData.weight }}kg</td>
-          <td>{{ bodyData.height }}m</td>
-          <td>{{ bodyData.date }}</td>
-          <button @click="removeBodyInfo(n)" class="table-button">Remove</button>
-        </tr>
-      </tbody>
-    </table>
+    <vue-good-table
+      class="vue-table"
+      :columns="columns"
+      :rows="bodyDataBase"
+      :fixed-header="false"
+      :line-numbers="true"
+      compactMode
+      :search-options="{
+        enabled: true,
+      }"
+      :pagination-options="{
+        enabled: true,
+      }"
+    >
+    </vue-good-table>
   </div>
 </template>
 
 <script>
+import DatePicker from "vue2-datepicker";
+import "vue2-datepicker/index.css";
+
 export default {
+  components: { DatePicker },
   data() {
     return {
       bodyDataBase: [],
       weight: null,
       height: null,
       date: null,
+      opeartion: null,
+      columns: [
+        { label: "Weight (kg)", field: "weight" },
+        { label: "Height (m)", field: "height" },
+        {
+          label: "Date",
+          field: "date",
+        },
+      ],
+      rows: [],
     };
   },
   mounted() {
@@ -98,9 +120,13 @@ td {
   width: 500px;
 }
 .table-button {
-  margin-top: 20px;
   background-color: rgb(27, 219, 17);
   color: white;
   font-weight: bold;
+  outline: none;
+}
+.vue-table {
+  margin: 0 auto;
+  width: 70vw;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
   <div class="hello">
-    <h1 class="homepage__title">
+    <BaseBanner class="homepage__title">
       More than
       <span class="coloredTitle">Health</span> Tracking!
-    </h1>
+    </BaseBanner>
     <div class="homepage__card">
       <BaseCard v-for="card in cardInfo" :key="card.title" class="homepage__card-block">
         <img :src="getLogosUrl(card.name)" slot="img" :alt="card.title" height="200px" />
@@ -11,9 +11,11 @@
         <p slot="description">{{ card.description }}</p>
       </BaseCard>
     </div>
-    <div>
-      <img src="healthlife.jpeg" alt="healthlife" />
-      <div>
+    <div class="homepage__block">
+      <div class="homepage__block-img">
+        <img :src="getLogosUrl('healthlife.jpeg')" alt="healthlife"/>
+      </div>
+      <div class="homepage__block-content">
         <BaseBlock v-for="block in blockInfo" :key="block.title">
           <h2 slot="title">{{ block.title }}</h2>
           <p slot="description">{{ block.description }}</p>
@@ -50,7 +52,7 @@ export default {
         {
           title: "Tracks your progress",
           description:
-            " Achieving and maintaining a healthy lifestyle can be a challenge for many people as the busy nature of many lives. By being able to enter and keep a record of your health and wellbeing over the past week, month or year, you have set yourself becomes much easier as you are able to keep an eye on your progress and see how far you have come. Being able to see your progress can also help you to achieve smaller goals that are more focused on improving your general health, rather than completing a one-off ambition.",
+            " Achieving and maintaining a healthy lifestyle can be a challenge for many people as the busy nature of many lives.  By being able to enter and keep a record of your health and wellbeing over the past week, month or year, you have set yourself becomes much easier as you are able to keep an eye on your progress and see how far you have come. Being able to see your progress can also help you to achieve smaller goals that are more focused on improving your general health, rather than completing a one-off ambition.",
         },
         {
           title: "Encourages competition",
@@ -62,8 +64,9 @@ export default {
   },
   methods: {
     getLogosUrl(pic) {
-      return require(`../assets/homepageLogos/${pic}`);
+      return require(`../assets/cards/${pic}`);
     },
+  
   },
 };
 </script>
@@ -83,6 +86,18 @@ export default {
     &-block {
       margin: 0 10px;
       padding: 20px;
+    }
+  }
+  &__block {
+    display: flex;
+    &-img {
+      width: 25vw;
+    }
+    &-content {
+      width: 75vw;
+      margin: 0 2vw;
+      text-align: left;
+      word-wrap: break-word;
     }
   }
 }

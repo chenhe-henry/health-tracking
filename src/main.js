@@ -1,6 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
+import store from "./store";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSpinner, faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -9,6 +10,9 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 // import { faLinkedIn } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { directive as onClickaway } from "vue-clickaway";
+import VueGoodTablePlugin from "vue-good-table";
+import "vue-good-table/dist/vue-good-table.css";
 
 import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
@@ -51,4 +55,6 @@ library.add(faSpinner, faCircleNotch, faLinkedinIn, faFontAwesome);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.config.productionTip = false;
 
-new Vue({ router, render: (h) => h(App) }).$mount("#app");
+Vue.directive("on-clickaway", onClickaway);
+Vue.use(VueGoodTablePlugin);
+new Vue({ router, store, render: (h) => h(App) }).$mount("#app");
