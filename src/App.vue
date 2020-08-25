@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <h1>Health Tracking</h1> -->
     <router-link class="nav" :to="{ name: 'home' }">HomePage</router-link>|
     <router-link class="nav" :to="{ name: 'bodymeasurement' }"
       >Body Measurement</router-link
@@ -38,10 +37,12 @@ export default {
   text-align: center;
   color: #2c3e50;
   box-sizing: border-box;
-  margin: 1%;
+  // margin: 1%;
   padding: 0;
+  font-weight: 500;
   // background-color: rgba(black, 0.1);
 }
+
 .nav {
   margin: 0 20px;
   text-decoration: none;

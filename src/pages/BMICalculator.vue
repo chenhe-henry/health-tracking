@@ -1,38 +1,67 @@
 <template>
   <div>
+    <BaseBanner class="bmi__title">
+      <div class="bmi__title-content">
+        Calculate your<span class="coloredTitle"> BMI</span> here!
+      </div>
+    </BaseBanner>
     <h1>What’s BMI?</h1>
-    <h3>BMI compares your weight to your height, and is calculated by dividing your weight (in kilograms) by your height (in metres squared). It gives you an idea of whether you’re "underweight", a "healthy" weight, "overweight", or "obese" for your height. BMI is one type of tool to help health professionals assess the risk for chronic disease.</h3>
+    <h3>
+      BMI(body mass index) compares your weight to your height, and is
+      calculated by dividing your weight (in kilograms) by your height (in
+      metres squared).
+    </h3>
+    <h3>
+      It gives you an idea of whether you’re "underweight", a "healthy" weight,
+      "overweight", or "obese" for your height.
+    </h3>
+    <h3>
+      BMI is one type of tool to help health professionals assess the risk for
+      chronic disease.
+    </h3>
     <img :src="getLogosUrl('bmi.jpeg')" alt="Body Mass Index" />
     <form @submit.prevent="calculate">
       <p>
         <label for="weight">Weight:</label>
-        <input type="number" id="weight" v-model="weight" placeholder="Weight in kg" /> kg
+        <input
+          type="number"
+          id="weight"
+          v-model="weight"
+          placeholder="Weight in kg"
+        />
+        kg
       </p>
       <p>
         <label for="height">Height:</label>
         <input id="height" v-model="height" placeholder="Height in m" /> m
       </p>
       <p>
-        <input type="submit" value="Calculate Your BMI" />
+        <input type="submit" value="Calculate Your BMI" class="bmi__button" />
       </p>
       <div v-show="BMIresult != ''">
-        <p>Your BMI Result is {{BMIresult}}</p>
+        <p>Your BMI Result is {{ BMIresult }}</p>
+        <p v-if="BMIresult < 18.5" class="BMI__result-purple">
+          You are considered underweight and possibly malnourished.
+        </p>
         <p
-          v-if="BMIresult < 18.5 "
-          class="BMI__result-purple"
-        >You are considered underweight and possibly malnourished.</p>
-        <p
-          v-else-if="BMIresult >= 18.5 && BMIresult < 25 "
+          v-else-if="BMIresult >= 18.5 && BMIresult < 25"
           class="BMI__result-blue"
-        >You are within a healthy weight range for young and middle-aged adults.</p>
+        >
+          You are within a healthy weight range for young and middle-aged
+          adults.
+        </p>
         <p
-          v-else-if="BMIresult >= 25 && BMIresult < 30 "
+          v-else-if="BMIresult >= 25 && BMIresult < 30"
           class="BMI__result-green"
-        >You are considered overweight.</p>
+        >
+          You are considered overweight.
+        </p>
         <p
           v-else-if="BMIresult >= 30 && BMIresult < 40"
           class="BMI__result-orange"
-        >You are considered obese.</p>
+        >
+          You are considered obese.
+        </p>
         <p v-else class="BMI__result-red">You are considered morbidly obese.</p>
       </div>
     </form>
@@ -71,6 +100,54 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.coloredTitle {
+  color: rgb(27, 219, 17);
+}
+label {
+  margin-right: 5px;
+  font-weight: bold;
+}
+#weight,
+#height {
+  padding: 0 1%;
+  height: 3vh;
+  font-size: 1em;
+  font-weight: bold;
+  border: 1px solid #17a2b8;
+  border-radius: 5px;
+}
+.bmi {
+  &__title {
+    background-image: linear-gradient(
+      to right,
+      rgb(17, 212, 199),
+      rgb(224, 28, 185)
+    );
+    font-size: 4em;
+    height: 10vh;
+    &-content {
+      color: white;
+    }
+  }
+  &__button {
+    text-decoration: none;
+    padding: 0 10%;
+    height: 4vh;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: 1px solid #17a2b8;
+    border-radius: 5px;
+    color: #17a2b8;
+    background-color: white;
+    transition: all 0.4s;
+    &:hover,
+    &:active,
+    &:focus {
+      color: white;
+      background-color: #17a2b8;
+    }
+  }
+}
 .BMI {
   &__result {
     &-purple {

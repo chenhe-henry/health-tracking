@@ -1,6 +1,10 @@
 <template>
   <div>
-    <h1>Body Measurement</h1>
+    <BaseBanner class="bodymeasurement__title">
+      <div class="bodymeasurement__title-content">
+        Record your lastest<span class="coloredTitle"> body info</span> here!
+      </div>
+    </BaseBanner>
     <form @submit.prevent="addBodyInfo">
       <p>
         <label for="weight">Weight:</label>
@@ -110,20 +114,53 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.bodyMeasurement__table,
-th,
-td {
-  margin: 0 auto;
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding: 20px;
-  width: 500px;
+.coloredTitle {
+  color: rgb(27, 219, 17);
+}
+.bodymeasurement {
+  &__title {
+    background-image: linear-gradient(
+      to right,
+      rgb(17, 212, 199),
+      rgb(224, 28, 185)
+    );
+    font-size: 4em;
+    height: 10vh;
+    &-content {
+      color: white;
+    }
+  }
+}
+label {
+  margin-right: 5px;
+  font-weight: bold;
+}
+#weight,
+#height {
+  padding: 0 1%;
+  height: 3vh;
+  font-size: 1em;
+  font-weight: bold;
+  border: 1px solid #17a2b8;
+  border-radius: 5px;
 }
 .table-button {
-  background-color: rgb(27, 219, 17);
-  color: white;
+  text-decoration: none;
+  padding: 0 2%;
+  height: 4vh;
+  font-size: 1.5em;
   font-weight: bold;
-  outline: none;
+  border: 1px solid #17a2b8;
+  border-radius: 5px;
+  color: #17a2b8;
+  background-color: white;
+  transition: all 0.4s;
+  &:hover,
+  &:active,
+  &:focus {
+    color: white;
+    background-color: #17a2b8;
+  }
 }
 .vue-table {
   margin: 0 auto;
