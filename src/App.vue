@@ -44,6 +44,7 @@ export default {
 }
 
 .nav {
+  font-size: 1.8em;
   margin: 0 20px;
   text-decoration: none;
   color: grey;
