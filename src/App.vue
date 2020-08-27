@@ -1,16 +1,10 @@
 <template>
   <div id="app">
     <router-link class="nav" :to="{ name: 'home' }">Home</router-link>|
-    <router-link class="nav" :to="{ name: 'bodymeasurement' }"
-      >Body Measurement</router-link
-    >|
-    <router-link class="nav" :to="{ name: 'bmicalculator' }"
-      >BMI Calculator</router-link
-    >| <router-link class="nav" :to="{ name: 'gallery' }">Gallery</router-link>|
-
-    <router-link class="nav" :to="{ name: 'affirmation' }"
-      >Daily Affirmation</router-link
-    >
+    <router-link class="nav" :to="{ name: 'bodymeasurement' }">Body Measurement</router-link>|
+    <router-link class="nav" :to="{ name: 'bmicalculator' }">BMI Calculator</router-link>|
+    <router-link class="nav" :to="{ name: 'gallery' }">Gallery</router-link>|
+    <router-link class="nav" :to="{ name: 'affirmation' }">Daily Affirmation</router-link>
 
     <!-- <hr /> -->
     <!-- <h1>Hello Deploy</h1>
@@ -55,6 +49,9 @@ export default {
   }
   &::after {
     content: counter(4);
+  }
+  &.router-link-exact-active {
+    color: rgb(27, 219, 17);
   }
 }
 .linkedin {
