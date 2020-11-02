@@ -109,7 +109,7 @@ export default {
       url("../assets/healthlife.jpg");
     background-size: cover;
     font-size: 4em;
-    height: 80vh;
+    height: 90vh;
     position: relative;
     clip-path: polygon(0 0, 70vw 0, 100vw 15vh, 100vw 95vh, 90vw 95vh, 0 75vh);
     &-content {
