@@ -154,7 +154,7 @@ tr:nth-child(even) {
       url("../assets/healthfood.jpg");
     background-size: cover;
     font-size: 4em;
-    height: 90vh;
+    height: 87vh;
     position: relative;
     clip-path: polygon(0 0, 70vw 0, 100vw 15vh, 100vw 95vh, 90vw 95vh, 0 75vh);
     &-content {

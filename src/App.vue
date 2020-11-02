@@ -19,7 +19,7 @@ export default {
   color: #2c3e50;
   box-sizing: border-box;
   font-weight: 500;
-  margin-bottom: 5vh;
+  margin: 3vh 0;
   // background: linear-gradient(to bottom, #2980b9, #6dd5fa, #ffffff);
 }
 *,
