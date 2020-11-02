@@ -2,7 +2,7 @@
   <div>
     <BaseBanner class="bodymeasurement__title">
       <div class="bodymeasurement__title-content">
-        Record your lastest<span class="coloredTitle"> body info</span> here!
+        Record Your Latest Body Info
       </div>
     </BaseBanner>
     <form @submit.prevent="addBodyInfo">
@@ -33,7 +33,7 @@
         />
       </p>
     </form>
-
+    <img :src="getLogosUrl('bmi.jpeg')" alt="Body Mass Index" />
     <vue-good-table
       class="vue-table"
       :columns="columns"
@@ -69,6 +69,10 @@ export default {
         { label: "Weight (kg)", field: "weight" },
         { label: "Height (m)", field: "height" },
         {
+          label: "BMI",
+          field: "BMI",
+        },
+        {
           label: "Date",
           field: "date",
         },
@@ -86,6 +90,9 @@ export default {
     }
   },
   methods: {
+    getLogosUrl(pic) {
+      return require(`../assets/cards/${pic}`);
+    },
     addBodyInfo() {
       if (!this.weight || !this.height || !this.date) {
         return;
@@ -94,6 +101,7 @@ export default {
         weight: this.weight,
         height: this.height,
         date: this.date,
+        BMI: this.weight / (this.height ^ 2),
       };
       this.bodyDataBase.push(bodyInfo);
       this.weight = "";
@@ -114,20 +122,26 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.coloredTitle {
-  color: rgb(27, 219, 17);
-}
 .bodymeasurement {
   &__title {
     background-image: linear-gradient(
-      to right,
-      rgb(17, 212, 199),
-      rgb(224, 28, 185)
-    );
+        to right,
+        rgba(white, 0.5),
+        rgba(white, 0.7)
+      ),
+      url("../assets/bodymeasurement.jpg");
+    background-size: cover;
     font-size: 4em;
-    height: 10vh;
+    height: 80vh;
+    position: relative;
+    clip-path: polygon(0 0, 70vw 0, 100vw 15vh, 100vw 95vh, 90vw 95vh, 0 75vh);
     &-content {
-      color: white;
+      color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      text-align: center;
     }
   }
 }
