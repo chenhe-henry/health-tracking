@@ -129,7 +129,7 @@ export default {
         rgba(white, 0.5),
         rgba(white, 0.7)
       ),
-      url("../assets/bodymeasurement.jpg");
+      url("../assets/healthtracking.jpg");
     background-size: cover;
     font-size: 4em;
     height: 87vh;
