@@ -28,38 +28,38 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 export default {
   data() {
     return {
-      weatherData: null,
-      lat: null,
-      lon: null,
-      apiUrl: "https://api.openweathermap.org/data/2.5/",
-      weatherAPI: process.env.VUE_APP_WEATHER_API_KEY,
+      // weatherData: null,
+      // lat: null,
+      // lon: null,
+      // apiUrl: "https://api.openweathermap.org/data/2.5/",
+      // weatherAPI: process.env.VUE_APP_WEATHER_API_KEY,
     };
   },
   mounted() {
-    this.getLocation();
+    // this.getLocation();
   },
   methods: {
-    getLocation() {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.lat = position.coords.latitude;
-        this.lon = position.coords.longitude;
-        this.getWeatherByCoords();
-      });
-    },
-    getWeatherByCoords() {
-      axios
-        .get(
-          `${this.apiUrl}weather?q=sydney&appid=${this.weatherAPI}&units=metric`
-        )
-        .then((response) => {
-          this.weatherData = response.data;
-        })
-        .catch((error) => console.log(error));
-    },
+    // getLocation() {
+    //   navigator.geolocation.getCurrentPosition((position) => {
+    //     this.lat = position.coords.latitude;
+    //     this.lon = position.coords.longitude;
+    //     this.getWeatherByCoords();
+    //   });
+    // },
+    // getWeatherByCoords() {
+    //   axios
+    //     .get(
+    //       `${this.apiUrl}weather?q=sydney&appid=${this.weatherAPI}&units=metric`
+    //     )
+    //     .then((response) => {
+    //       this.weatherData = response.data;
+    //     })
+    //     .catch((error) => console.log(error));
+    // },
   },
 };
 </script>
