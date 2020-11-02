@@ -3,7 +3,13 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faSpinner, faCircleNotch } from "@fortawesome/free-solid-svg-icons";
+import {
+  faSpinner,
+  faCircleNotch,
+  faTable,
+  faWeight,
+  faHome,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faLinkedinIn,
   faFontAwesome,
@@ -51,7 +57,15 @@ requireComponent.keys().forEach((fileName) => {
   );
 });
 
-library.add(faSpinner, faCircleNotch, faLinkedinIn, faFontAwesome);
+library.add(
+  faSpinner,
+  faCircleNotch,
+  faLinkedinIn,
+  faFontAwesome,
+  faTable,
+  faWeight,
+  faHome
+);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.config.productionTip = false;
 

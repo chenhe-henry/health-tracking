@@ -1,63 +1,32 @@
 <template>
-  <div id="app">
-    <router-link class="nav" :to="{ name: 'home' }">Home</router-link>|
-    <router-link class="nav" :to="{ name: 'bodymeasurement' }">Body Measurement</router-link>|
-    <router-link class="nav" :to="{ name: 'bmicalculator' }">BMI Calculator</router-link>|
-    <router-link class="nav" :to="{ name: 'gallery' }">Gallery</router-link>|
-    <router-link class="nav" :to="{ name: 'affirmation' }">Daily Affirmation</router-link>
-
-    <!-- <hr /> -->
-    <!-- <h1>Hello Deploy</h1>
-    <font-awesome-icon :icon="['fas', 'spinner']" spin size="6x" class="linkedin" />
-    <font-awesome-icon icon="circle-notch" spin size="6x" />
-    <font-awesome-icon :icon="['fab', 'linkedin-in']" class="linkedin" />
-    <font-awesome-icon :icon="['fab', 'font-awesome']" />-->
-    <router-view></router-view>
-  </div>
+  <div id="app"><NavBar /><router-view></router-view></div>
 </template>
 
 <script>
+import NavBar from "@/components/NavBar.vue";
 export default {
   name: "App",
-  components: {},
+  components: { NavBar },
 };
 </script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   box-sizing: border-box;
-  // margin: 1%;
-  padding: 0;
   font-weight: 500;
-  // background-color: rgba(black, 0.1);
+  margin-bottom: 5vh;
+  // background: linear-gradient(to bottom, #2980b9, #6dd5fa, #ffffff);
 }
-
-.nav {
-  font-size: 1.8em;
-  margin: 0 20px;
-  text-decoration: none;
-  color: grey;
-  font-weight: bold;
-  transition: all 0.2s;
-  &:hover {
-    color: black;
-  }
-  &::after {
-    content: counter(4);
-  }
-  &.router-link-exact-active {
-    color: rgb(27, 219, 17);
-  }
-}
-.linkedin {
-  &:hover {
-    color: white;
-    background-color: blue;
-  }
+*,
+*::before,
+*::after {
+  // box-sizing: border-box;
+  // margin: 0;
+  // padding: 0;
 }
 </style>

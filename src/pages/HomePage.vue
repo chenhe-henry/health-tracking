@@ -2,8 +2,7 @@
   <div class="hello">
     <BaseBanner class="homepage__title">
       <div class="homepage__title-content">
-        More than
-        <span class="coloredTitle">Health</span> Tracking!
+        Health Tracking
       </div>
     </BaseBanner>
     <div class="homepage__card">
@@ -55,22 +54,16 @@ export default {
     return {
       cardInfo: [
         {
-          name: "bodyMeasurement.jpeg",
-          title: "Body Measurement",
-          description: "Record and track your weight every single day.",
+          name: "bmi.jpeg",
+          title: "Body Measurement & Record",
+          description: "Record and track your weight and BMI.",
           redirectTo: "bodymeasurement",
         },
         {
-          name: "bmi.jpeg",
-          title: "BMI calculator",
-          description: "Calculate your BMI, get know your health condition.",
-          redirectTo: "bmicalculator",
-        },
-        {
-          name: "gallery.jpeg",
-          title: "Gallary",
+          name: "breakfast.jpg",
+          title: "Nutrition Analysis",
           description: "Share with us your colorful life!",
-          redirectTo: "gallery",
+          redirectTo: "nutritionanalysis",
         },
       ],
       blockInfo: [
@@ -109,19 +102,28 @@ export default {
 .homepage {
   &__title {
     background-image: linear-gradient(
-      to right,
-      rgb(17, 212, 199),
-      rgb(224, 28, 185)
-    );
+        to right,
+        rgba(white, 0.5),
+        rgba(white, 0.7)
+      ),
+      url("../assets/healthlife.jpg");
+    background-size: cover;
     font-size: 4em;
-    height: 10vh;
+    height: 80vh;
+    position: relative;
+    clip-path: polygon(0 0, 70vw 0, 100vw 15vh, 100vw 95vh, 90vw 95vh, 0 75vh);
     &-content {
-      color: white;
+      color: black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -60%);
+      text-align: center;
     }
   }
   &__card {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
     &-block {
       margin: 0 10px;

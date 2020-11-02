@@ -3,9 +3,8 @@ import Router from "vue-router";
 import HomePage from "@/pages/HomePage.vue";
 import Affirmation from "@/pages/Affirmation.vue";
 
-import Gallery from "@/pages/Gallery.vue";
+import NutritionAnalysis from "@/pages/NutritionAnalysis.vue";
 import BodyMeasurement from "@/pages/BodyMeasurement.vue";
-import BMICalculator from "@/pages/BMICalculator.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -16,21 +15,15 @@ export default new Router({
       component: HomePage,
     },
     {
-      path: "/gallery",
-      name: "gallery",
-      component: Gallery,
+      path: "/nutritionanalysis",
+      name: "nutritionanalysis",
+      component: NutritionAnalysis,
     },
     {
       path: "/bodymeasurement",
       name: "bodymeasurement",
       component: BodyMeasurement,
     },
-    {
-      path: "/bmicalculator",
-      name: "bmicalculator",
-      component: BMICalculator,
-    },
-
     {
       path: "/affirmation",
       name: "affirmation",
