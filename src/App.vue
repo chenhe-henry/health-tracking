@@ -20,7 +20,6 @@ export default {
   box-sizing: border-box;
   font-weight: 500;
   margin: 3vh 0;
-  // background: linear-gradient(to bottom, #2980b9, #6dd5fa, #ffffff);
 }
 *,
 *::before,
