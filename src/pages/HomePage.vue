@@ -49,13 +49,12 @@
 <script>
 export default {
   name: "HomePage",
-
   data() {
     return {
       cardInfo: [
         {
           name: "bmi.jpeg",
-          title: "Body Measurement & Record",
+          title: "Body Measurement",
           description: "Record and track your weight and BMI.",
           redirectTo: "bodymeasurement",
         },
@@ -96,9 +95,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-.coloredTitle {
-  color: rgb(27, 219, 17);
-}
 .homepage {
   &__title {
     background-image: linear-gradient(
@@ -112,6 +108,7 @@ export default {
     height: 87vh;
     position: relative;
     clip-path: polygon(0 0, 70vw 0, 100vw 15vh, 100vw 95vh, 90vw 95vh, 0 75vh);
+    background-position: 56%;
     &-content {
       color: black;
       position: absolute;
@@ -123,7 +120,10 @@ export default {
   }
   &__card {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     &-block {
       margin: 0 10px;

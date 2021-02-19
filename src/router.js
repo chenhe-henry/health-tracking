@@ -2,9 +2,6 @@ import Vue from "vue";
 import Router from "vue-router";
 import HomePage from "@/pages/HomePage.vue";
 import Affirmation from "@/pages/Affirmation.vue";
-
-import NutritionAnalysis from "@/pages/NutritionAnalysis.vue";
-import BodyMeasurement from "@/pages/BodyMeasurement.vue";
 Vue.use(Router);
 
 export default new Router({
@@ -17,12 +14,12 @@ export default new Router({
     {
       path: "/nutritionanalysis",
       name: "nutritionanalysis",
-      component: NutritionAnalysis,
+      component: () => import("@/pages/NutritionAnalysis.vue"),
     },
     {
       path: "/bodymeasurement",
       name: "bodymeasurement",
-      component: BodyMeasurement,
+      component: () => import("@/pages/BodyMeasurement.vue"),
     },
     {
       path: "/affirmation",
