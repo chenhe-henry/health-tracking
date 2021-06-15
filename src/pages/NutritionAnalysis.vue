@@ -114,6 +114,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/custom.scss";
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -156,7 +157,7 @@ tr:nth-child(even) {
     font-size: 4em;
     height: 87vh;
     position: relative;
-    clip-path: polygon(0 0, 70vw 0, 100vw 15vh, 100vw 95vh, 90vw 95vh, 0 75vh);
+    clip-path: $bg-clip;
     &-content {
       color: black;
       position: absolute;

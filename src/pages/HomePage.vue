@@ -95,6 +95,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+@import "@/assets/custom.scss";
 .homepage {
   &__title {
     background-image: linear-gradient(
@@ -107,7 +108,7 @@ export default {
     font-size: 4em;
     height: 87vh;
     position: relative;
-    clip-path: polygon(0 0, 70vw 0, 100vw 15vh, 100vw 95vh, 90vw 95vh, 0 75vh);
+    clip-path: $bg-clip;
     background-position: 56%;
     &-content {
       color: black;
@@ -121,8 +122,11 @@ export default {
   &__card {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    @media (min-width: 768px) {
+    grid-template-columns: none;
+    grid-gap: 2rem;
+    @media (min-width: $laptop-md) {
       grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: none;
     }
 
     &-block {

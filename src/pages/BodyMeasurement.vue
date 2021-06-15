@@ -122,6 +122,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/assets/custom.scss";
 .bodymeasurement {
   &__title {
     background-image: linear-gradient(
@@ -134,7 +135,7 @@ export default {
     font-size: 4em;
     height: 87vh;
     position: relative;
-    clip-path: polygon(0 0, 70vw 0, 100vw 15vh, 100vw 95vh, 90vw 95vh, 0 75vh);
+    clip-path: $bg-clip;
     &-content {
       color: black;
       position: absolute;
