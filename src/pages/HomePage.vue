@@ -157,13 +157,14 @@ export default {
   &__block {
     margin-top: 5vh;
     display: flex;
-
-    &-img {
-      width: 25vw;
-      margin: auto 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: $laptop-md) {
+      flex-direction: row;
     }
+
     &-content {
-      width: 75vw;
       margin: 0 2vw;
       text-align: left;
     }
